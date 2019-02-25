@@ -2,7 +2,7 @@
 
 /* CSS files add styling rules to your content */
 body {
-  font-family: 'Benton Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+  font-family: Inter, system-ui;
   margin: 0;
   display: grid;
   grid-template-rows: [header] 56px [content] 1fr;
@@ -15,7 +15,7 @@ header {
   border: 2px solid #000;
   display: flex;
   align-items: center;
-  padding: 0 24px;
+  padding: 0 32px;
 }
 
 header span {
@@ -30,12 +30,16 @@ header h1 {
 }
 
 .easing {
+  --dot-width: 36px;
+  --padding: 32px;
   border: 2px solid #000;
   border-top-width: 0px;
   border-left-width: 0px;
   height: calc((100vh - 56px) / 2);
-  padding: 24px;
+  padding: var(--padding);
   position: relative;
+  display: grid;
+  grid-template-rows: [title] min-content [content] 1fr;
 }
 
 /* select every third item (3n), including the first (+1) and turn back on its border */
@@ -43,9 +47,17 @@ header h1 {
   border-left-width: 2px;
 }
 
+.easing h2 {
+  grid-row: title;
+  font-weight: 500;
+  font-size: 18px;
+}
+
 .dot {
-  width: 32px;
-  height: 32px;
+  grid-row: content;
+  align-self: center;
+  width: 36px;
+  height: 36px;
   background: black;
   transition-property: all;
   transition-duration: 800ms;
@@ -54,14 +66,5 @@ header h1 {
 
 .easing:hover .dot {
   /* opacity: 1; */
-  transform: translateX(calc(33vw - 32px - 48px));
-}
-
-@keyframes pop {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  transform: translateX(calc(33vw - var(--dot-width) - (var(--padding) * 2)));
 }
