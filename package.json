@@ -1,13 +1,12 @@
 {
-  "name": "static-starter",
+  "name": "easing-curves",
   "version": "1.0.0",
-  "description": "static site boilerplate",
+  "description": "easing curve reference for designers and devs",
   "author": "jmegs",
   "license": "MIT",
   "scripts": {
     "start": "gulp dev",
-    "build": "gulp build",
-    "new-git-repo": "rm -rf .git && git init"
+    "build": "gulp build"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.7.1",
