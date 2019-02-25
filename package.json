@@ -1,0 +1,35 @@
+{
+  "name": "static-starter",
+  "version": "1.0.0",
+  "description": "static site boilerplate",
+  "author": "jmegs",
+  "license": "MIT",
+  "scripts": {
+    "start": "gulp dev",
+    "build": "gulp build",
+    "new-git-repo": "rm -rf .git && git init"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.7.1",
+    "autoprefixer": "^9.0.2",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "browser-sync": "^2.24.4",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "markdown-it": "^8.4.2",
+    "markdown-it-block-image": "^0.0.3",
+    "node-sass": "^4.11.0",
+    "postcss-preset-env": "^6.5.0"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  }
+}
