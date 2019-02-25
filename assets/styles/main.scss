@@ -1,5 +1,67 @@
 @import 'base';
 
+/* CSS files add styling rules to your content */
 body {
-  padding: 5vmin;
+  font-family: 'Benton Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+  margin: 0;
+  display: grid;
+  grid-template-rows: [header] 56px [content] 1fr;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+header {
+  grid-row: header;
+  grid-column: 1 / -1; /* full width */
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
+
+header span {
+  display: flex;
+  align-items: baseline;
+}
+
+header h1 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 0.25em;
+}
+
+.easing {
+  border: 2px solid #000;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  height: calc((100vh - 56px) / 2);
+  padding: 24px;
+  position: relative;
+}
+
+/* select every third item (3n), including the first (+1) and turn back on its border */
+.easing:nth-of-type(3n + 1) {
+  border-left-width: 2px;
+}
+
+.dot {
+  width: 32px;
+  height: 32px;
+  background: black;
+  transition-property: all;
+  transition-duration: 800ms;
+  /* opacity: 0; */
+}
+
+.easing:hover .dot {
+  /* opacity: 1; */
+  transform: translateX(calc(33vw - 32px - 48px));
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
