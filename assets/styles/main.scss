@@ -32,6 +32,7 @@ header h1 {
 .easing {
   --dot-width: 36px;
   --padding: 32px;
+  --moveToEdge: calc(33vw - var(--dot-width) - (var(--padding) * 2));
   border: 2px solid #000;
   border-top-width: 0px;
   border-left-width: 0px;
@@ -61,16 +62,14 @@ header h1 {
   background: black;
   transition-property: all;
   transition-duration: 800ms;
-  animation-duration: 1600ms;
+  animation-duration: 3000ms;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
-  animation-play-state: paused;
-  animation-name: metronome;
   /* opacity: 0; */
 }
 
 .easing:hover .dot {
-  animation-play-state: running;
+  animation-name: metronome;
   /* opacity: 1; */
   // transform: translateX(calc(33vw - var(--dot-width) - (var(--padding) * 2)));
 }
@@ -79,9 +78,11 @@ header h1 {
   0% {
     transform: translateX(0);
   }
+  30%,
   50% {
-    transform: translateX(calc(33vw - var(--dot-width) - (var(--padding) * 2)));
+    transform: translateX(var(--moveToEdge));
   }
+  80%,
   100% {
     transform: translateX(0);
   }
