@@ -61,10 +61,28 @@ header h1 {
   background: black;
   transition-property: all;
   transition-duration: 800ms;
+  animation-duration: 1600ms;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+  animation-name: metronome;
   /* opacity: 0; */
 }
 
 .easing:hover .dot {
+  animation-play-state: running;
   /* opacity: 1; */
-  transform: translateX(calc(33vw - var(--dot-width) - (var(--padding) * 2)));
+  // transform: translateX(calc(33vw - var(--dot-width) - (var(--padding) * 2)));
+}
+
+@keyframes metronome {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(33vw - var(--dot-width) - (var(--padding) * 2)));
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
