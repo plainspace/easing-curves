@@ -13,5 +13,6 @@ for val in easings
     //- refactor this to be a semantic header
     div.easing__header
       h2= val.name
+      input.sr-only.js_clipboard_text(value=`${val.css}`) 
       span.easing__alert Copied to Clipboard
     div.dot(style=`transition-timing-function: ${val.css}; animation-timing-function: ${val.css}`)

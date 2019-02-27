@@ -7,6 +7,11 @@ function handleClick(el) {
   el.classList.add('clicked')
 
   // copy to clipboard
+  const text = el.querySelector('.js_clipboard_text')
+  console.log(text)
+  text.select()
+  document.execCommand('copy')
+  console.log(`%c Copied Text ${text}`, `color: green;`)
 
   // remove alert
   setTimeout(() => {
