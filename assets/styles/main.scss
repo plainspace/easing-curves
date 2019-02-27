@@ -40,18 +40,36 @@ header h1 {
   padding: var(--padding);
   position: relative;
   display: grid;
-  grid-template-rows: [title] min-content [content] 1fr;
+  grid-template-rows: [header] min-content [content] 1fr;
+}
+
+.easing__header {
+  grid-row: header;
+  display: flex;
+  align-content: baseline;
+  justify-content: space-between;
+}
+
+.easing h2 {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.easing__alert {
+  /* replace this */
+  color: green;
+  opacity: 0;
+  transform: translateY(20%);
+  transition: all 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.clicked .easing__alert {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 /* select every third item (3n), including the first (+1) and turn back on its border */
 .easing:nth-of-type(3n + 1) {
   border-left-width: 2px;
-}
-
-.easing h2 {
-  grid-row: title;
-  font-weight: 500;
-  font-size: 18px;
 }
 
 .dot {

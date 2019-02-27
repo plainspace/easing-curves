@@ -10,5 +10,8 @@ header
 
 for val in easings
   section.easing(id=`${val.name}`)
-    h2= val.name
+    //- refactor this to be a semantic header
+    div.easing__header
+      h2= val.name
+      span.easing__alert Copied to Clipboard
     div.dot(style=`transition-timing-function: ${val.css}; animation-timing-function: ${val.css}`)
