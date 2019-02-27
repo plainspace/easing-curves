@@ -70,19 +70,17 @@ header h1 {
 
 .easing:hover .dot {
   animation-name: metronome;
-  /* opacity: 1; */
-  // transform: translateX(calc(33vw - var(--dot-width) - (var(--padding) * 2)));
 }
 
 @keyframes metronome {
   0% {
     transform: translateX(0);
   }
-  30%,
-  50% {
+  45%,
+  55% {
     transform: translateX(var(--moveToEdge));
   }
-  80%,
+  90%,
   100% {
     transform: translateX(0);
   }
