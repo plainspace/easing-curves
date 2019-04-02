@@ -4,7 +4,7 @@ const easings = document.querySelectorAll('.easing')
 
 function handleClick(el) {
   // show alert
-  el.classList.add('clicked')
+  document.documentElement.classList.add('toast-show')
 
   // copy to clipboard
   const text = el.querySelector('.js_clipboard_text')
@@ -15,8 +15,8 @@ function handleClick(el) {
 
   // remove alert
   setTimeout(() => {
-    el.classList.remove('clicked')
-  }, 800)
+    document.documentElement.classList.remove('toast-show')
+  }, 2000)
 }
 
 // listen for clicks

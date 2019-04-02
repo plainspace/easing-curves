@@ -2,11 +2,17 @@
 layout: base
 title: Easing
 ---
+.toast
+  span Copied to Clipboard
 
 header
-   span 
+  div 
     h1 Easing
     code v1.0
+  div
+    span made by <a href="https://johnmeguerian.com">jmegs</a>
+    span source on <a href="https://github.com/jmegs/easing-curves">github</a>
+
 
 for val in easings
   section.easing(id=`${val.name}`)
@@ -14,5 +20,7 @@ for val in easings
     div.easing__header
       h2= val.name
       input.sr-only.js_clipboard_text(value=`${val.css}`) 
-      span.easing__alert Copied to Clipboard
     div.dot(style=`transition-timing-function: ${val.css}; animation-timing-function: ${val.css}`)
+    div.easing__footer 
+      span.easing__help-text #{val.css}
+      span.easing__help-text Click to Copy
