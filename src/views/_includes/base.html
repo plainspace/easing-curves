@@ -32,7 +32,8 @@
       content="A simple easing curve reference for designers and developers. Compare different values and copy them to your clipboard."
     />
     <meta property="twitter:image" content="/img/og-image.png" />
-    <link rel="stylesheet" href="/css/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/main.css" />
     {% if title %}
     <title>{{ title }}</title>
     {% else %}
@@ -41,6 +42,6 @@
   </head>
   <body>
     {{ content }}
-    <script src="/js/app.js"></script>
+    <script src="/assets/app.js" defer></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 # Dirs
-dist/
+_site
 
 # Dependency directories
 node_modules/
@@ -15,4 +15,4 @@ npm-debug.log*
 .DS_Store
 
 # generated files
-.jekyll-metadata
+.cache
